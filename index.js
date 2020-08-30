@@ -3,12 +3,12 @@ var webdriver = require("selenium-webdriver");
 var driver = new webdriver.Builder().forBrowser("chrome").build();
 
 try {
-  driver
-    .get("https://google.com")
-    .then(() => {
-      driver.quit();
-    })
-    .catch((err) => console.log(err));
+  getGoogle();
 } catch (err) {
   console.log(err);
+}
+
+async function getGoogle() {
+  await driver.get("https://google.com");
+  await driver.quit();
 }
