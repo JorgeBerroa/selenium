@@ -1,0 +1,15 @@
+{
+  "name": "selenium",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chromedriver": "^85.0.0",
+    "selenium-webdriver": "^4.0.0-alpha.7"
+  }
+}
