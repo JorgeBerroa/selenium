@@ -9,6 +9,10 @@ try {
 }
 
 async function getGoogle() {
-  await driver.get("https://google.com");
-  await driver.quit();
+  try {
+    await driver.get("https://google.com");
+    await driver.quit();
+  } catch (error) {
+    console.log(error);
+  }
 }
