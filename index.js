@@ -1,7 +1,15 @@
-require("chromedriver");
-var webdriver = require("selenium-webdriver");
-var driver = new webdriver.Builder().forBrowser("chrome").build();
+var selenium = require("selenium-webdriver");
 
+var capabilities = selenium.Capabilities.chrome();
+
+capabilities.set("chromeOptions", {
+  args: ["--headless", "--no-sandbox", "window-size=1024,768", "--disable-gpu"],
+});
+
+this.driver = new selenium.Builder()
+  .forBrowser("chrome")
+  .withCapabilities(capabilities)
+  .build();
 try {
   getGoogle();
 } catch (err) {
