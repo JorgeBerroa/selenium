@@ -3,7 +3,7 @@ var webdriver = require("selenium-webdriver");
 var capabilities = webdriver.Capabilities.chrome();
 
 capabilities.set("chromeOptions", {
-  args: ["--no-sandbox","--disable-dev-shm-usage"],
+  args: ["--no-sandbox","--disable-gpu"],
 });
 
 var driver = new webdriver.Builder()
