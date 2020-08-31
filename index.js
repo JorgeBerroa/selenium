@@ -1,16 +1,27 @@
 require("chromedriver");
 var webdriver = require("selenium-webdriver");
-var driver = new webdriver.Builder().forBrowser("chrome").build();
+var capabilities = webdriver.Capabilities.chrome();
+
+capabilities.set("chromeOptions", {
+  args: ["--no-sandbox", "--headless"],
+});
+
+var driver = new webdriver.Builder()
+  .forBrowser("chrome")
+  .withCapabilities(capabilities)
+  .build();
 
 try {
- getGoogle();
+  getGoogle();
 } catch (err) {
   console.log(err);
 }
 
-
-
-async function getGoogle(){
+async function getGoogle() {
+  try {
     await driver.get("https://google.com");
     await driver.quit();
+  } catch (error) {
+    console.log(error);
+  }
 }
