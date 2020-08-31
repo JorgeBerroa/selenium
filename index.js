@@ -3,7 +3,7 @@ var webdriver = require("selenium-webdriver");
 var capabilities = webdriver.Capabilities.chrome();
 
 capabilities.set("chromeOptions", {
-  args: ["--no-sandbox", "--headless"],
+  args: ["--no-sandbox"],
 });
 
 var driver = new webdriver.Builder()
