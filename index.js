@@ -21,6 +21,7 @@ async function getGoogle() {
   try {
 
     await driver.get("https://google.com");
+      console.log(" I just saw google !!!!");
     await driver.quit();
   } catch (error) {
     console.log(error);
