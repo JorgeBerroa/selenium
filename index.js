@@ -6,10 +6,7 @@ capabilities.set("chromeOptions", {
   args: ["--no-sandbox","--disable-gpu"],
 });
 
-var driver = new webdriver.Builder()
-  .forBrowser("chrome")
-  .withCapabilities(capabilities)
-  .build();
+
 
 try {
   getGoogle();
@@ -18,7 +15,12 @@ try {
 }
 
 async function getGoogle() {
+      let driver = await new webdriver.Builder()
+  .forBrowser("chrome")
+  .withCapabilities(capabilities)
+  .build();
   try {
+
     await driver.get("https://google.com");
     await driver.quit();
   } catch (error) {
