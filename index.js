@@ -16,7 +16,7 @@ try {
 async function getGoogle() {
       let driver = await new webdriver.Builder()
   .forBrowser("chrome")
-  .withCapabilities(capabilities)
+  .usingServer("http://localhost:4444/wd/hub")
   .build();
   try {
 
